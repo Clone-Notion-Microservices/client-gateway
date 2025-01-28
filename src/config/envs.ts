@@ -7,12 +7,16 @@ interface EnvVariables {
   PORT: number;
   PROJECT_SERVICES_HOST: string;
   PROJECT_SERVICES_PORT: number;
+  TASKS_SERVICES_HOST: string;
+  TASKS_SERVICES_PORT: number;
 }
 
 const envsSchema = joi.object({
   PORT: joi.number().required(),
   PROJECT_SERVICES_HOST: joi.string().required(),
   PROJECT_SERVICES_PORT: joi.number().required(),
+  TASKS_SERVICES_HOST: joi.string().required(),
+  TASKS_SERVICES_PORT: joi.number().required(),
 })
   .unknown(true);
 
@@ -27,4 +31,6 @@ export const envs = {
   port: envVariables.PORT,
   project_services_host: envVariables.PROJECT_SERVICES_HOST,
   project_services_port: envVariables.PROJECT_SERVICES_PORT,
+  tasks_services_host: envVariables.TASKS_SERVICES_HOST,
+  tasks_services_port: envVariables.TASKS_SERVICES_PORT,
 };
