@@ -9,7 +9,9 @@ import { envs, TASKS_SERVICES } from '../config';
   imports: [
     ClientsModule.register([
       {
-        name: TASKS_SERVICES, transport: Transport.TCP, options: {
+        name: TASKS_SERVICES,
+        transport: Transport.TCP,
+        options: {
           host: envs.tasks_services_host,
           port: envs.tasks_services_port,
         },

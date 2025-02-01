@@ -9,7 +9,9 @@ import { envs, PROJECT_SERVICES } from '../config';
   imports: [
     ClientsModule.register([
       {
-        name: PROJECT_SERVICES, transport: Transport.TCP, options: {
+        name: PROJECT_SERVICES,
+        transport: Transport.TCP,
+        options: {
           host: envs.project_services_host,
           port: envs.project_services_port,
         },
@@ -17,5 +19,4 @@ import { envs, PROJECT_SERVICES } from '../config';
     ]),
   ],
 })
-export class ProjectsModule {
-}
+export class ProjectsModule {}
