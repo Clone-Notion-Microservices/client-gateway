@@ -48,6 +48,16 @@ export class TasksController {
   }
 
   @UseGuards(AuthGuard)
+  @Get('/user/:userId')
+  findOneByUser(@Param('userId') userId: string) {
+    return this.tasksClient.send('findOneByUser', +userId).pipe(
+      catchError((err) => {
+        throw new RpcException(err);
+      }),
+    );
+  }
+
+  @UseGuards(AuthGuard)
   @Patch(':tasksId')
   update(
     @Param('tasksId', ParseIntPipe) tasksId: number,

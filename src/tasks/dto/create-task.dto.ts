@@ -24,7 +24,7 @@ export class CreateTaskDto {
   @IsString()
   @IsNotEmpty()
   @IsOptional()
-  @IsIn(['to-do', 'in-progress', 'completed'])
+  @IsIn(['to_do', 'in_progress', 'completed'])
   public status?: string;
 
   @IsNumber()

@@ -1,4 +1,6 @@
 import {
+  IsArray,
+  IsBoolean,
   IsEmail,
   IsIn,
   IsNotEmpty,
@@ -18,6 +20,7 @@ export class CreateUserDto {
 
   @IsString()
   @MinLength(6)
+  @IsOptional()
   @Transform(({ value }) => value.trim())
   password: string;
 
@@ -26,4 +29,16 @@ export class CreateUserDto {
   @IsOptional()
   @IsIn(['team_member', 'admin'])
   public role?: string;
+
+  @IsBoolean()
+  @IsOptional()
+  public available?: boolean;
+
+  @IsArray()
+  @IsOptional()
+  public projects_permission?: [];
+
+  @IsArray()
+  @IsOptional()
+  public tasks_permission?: [];
 }

@@ -60,7 +60,7 @@ export class UsersController {
   }
 
   @UseGuards(AuthGuard)
-  @Patch(':id')
+  @Patch(':usersId')
   update(
     @Param('usersId', ParseIntPipe) usersId: number,
     @Body() updateUserDto: UpdateUserDto,
